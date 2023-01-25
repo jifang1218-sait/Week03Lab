@@ -19,39 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class AgeCalculatorServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-        String url="/agecalculator.jsp";
-        String strAge = request.getParameter("ageField");
-        String result = "";
-        if (strAge.length() <= 0) {
-            result = "You must give your current age.";
-        } else if (!StringUtils.isNumeric(strAge)) {
-            result = "You must enter a number.";
-        } else {
-            int age = StringUtils.toInt(strAge);
-            User user = new User();
-            user.setAge(age);
-            result = "Your age next birthday will be " + (user.getAge() + 1);
-        }
-        
-        request.setAttribute("result", result);
-        getServletContext()
-                .getRequestDispatcher(url).
-                forward(request, response);
-    }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -66,7 +33,7 @@ public class AgeCalculatorServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String url="/agecalculator.jsp";
+        String url="/WEB-INF/agecalculator.jsp";
         
         getServletContext()
                 .getRequestDispatcher(url).
@@ -86,7 +53,7 @@ public class AgeCalculatorServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String url="/agecalculator.jsp";
+        String url="/WEB-INF/agecalculator.jsp";
         String strAge = request.getParameter("ageField");
         String result = "";
         if (strAge.length() <= 0) {

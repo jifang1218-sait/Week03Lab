@@ -31,7 +31,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String url = "/arithmeticcalculator.jsp";
+        String url = "/WEB-INF/arithmeticcalculator.jsp";
         String result = "---";
         request.setAttribute("result", result);
         getServletContext()
@@ -52,7 +52,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String url = "/arithmeticcalculator.jsp";
+        String url = "/WEB-INF/arithmeticcalculator.jsp";
 
         String first = request.getParameter("fieldFirst");
         String second = request.getParameter("fieldSecond");
